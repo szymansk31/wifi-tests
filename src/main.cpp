@@ -2,8 +2,10 @@
 #include <WiFi.h>
 
 /*ADD YOUR PASSWORD BELOW*/
-const char *ssid = "main xfinity";
-const char *password = "magistra59";
+//const char *ssid = "main xfinity";
+//const char *password = "magistra59";
+const char *ssid = "PRR";
+const char *password = "";
 
 WiFiClient client;
 
@@ -18,12 +20,12 @@ void connectToWiFi() {
    Serial.println("...");
    WiFi.begin(ssid, password);
    int retries = 0;
-while ((WiFi.status() != WL_CONNECTED) && (retries < 15)) {
+while ((WiFi.status() != WL_CONNECTED) && (retries < 45)) {
    retries++;
    delay(500);
    Serial.print(".");
 }
-if (retries > 14) {
+if (retries > 44) {
     Serial.println(F("WiFi connection FAILED"));
 }
 if (WiFi.status() == WL_CONNECTED) {
